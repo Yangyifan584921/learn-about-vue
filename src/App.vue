@@ -7,8 +7,11 @@
 <script>
 
 export default {
-  name: 'App',
+  name: 'app',
   components: {
+  },
+  mounted() {
+    console.log('app', this._routerRoot._router)
   }
 }
 </script>
