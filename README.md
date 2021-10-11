@@ -37,3 +37,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - 创建路由匹配器：createMatcher；
 - match 方法 和 addRoutes 方法的实现；
 
+### 3.
+参考链接：https://xie.infoq.cn/article/01c4fe7c4400e3e774dcf7ec4?source=app_share
+- 创建两种路由模式类；
+- 父类和子类继承方法的设计；
+-路由初始化 init 处理逻辑；
