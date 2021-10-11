@@ -23,6 +23,8 @@ export default function install(Vue) {
         this._routerRoot = this
         // 为根组件添加_router属性并指向this.$options.router
         this._router = this.$options.router
+        // 在根组件中，调用路由实例上的init方法，完成插件的初始化
+        this._router.init(this)
 
       } else { // 子组件
         console.log('子组件', this)
