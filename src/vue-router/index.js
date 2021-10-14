@@ -52,6 +52,16 @@ class VueRouter {
     // 初始化的时候，获取当前的hash值进行跳转，并设置监听器
     history.transtionTo(history.getCurrentLoction(), setUpListener)
   }
+  /**
+   * 根据路径匹配到路由映射表matcher中进行路由匹配
+   * @param {*} location 
+   * @returns 匹配结果数组
+   * 
+   * 备注：根据类的封装性设计原则，再History类中，不能直接访问matcher，需要通过类方法match对外提供数据访问
+   */
+  match(location) {
+    return this.matcher.macth(location)
+  }
 }
 // 当vue.use的时候，会自动执行插件上的install方法
 VueRouter.install = install

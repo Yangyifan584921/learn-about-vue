@@ -42,3 +42,18 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - 创建两种路由模式类；
 - 父类和子类继承方法的设计；
 -路由初始化 init 处理逻辑；
+
+### 4.
+参考链接：https://xie.infoq.cn/article/df4e3a07efc04650ceadcda6d?source=app_share
+- 实现路由匹配
+#### 路由匹配分析
+- 通过路由匹配器对路由配置进行扁平化处理
+```
+{'/': Record1, '/user': Record2, '/user/info': Record3 }
+```
+- 接下来，进行路由匹配，如果访问的路径是：/user/info，那么路由匹配的结果将是两条记录：
+```
+// 先匹配到 /user 之后，才能匹配到 /user/info；
+matches:[Record2, Record3]
+```
+> 所以，一个路由可能会命中多个匹配规则

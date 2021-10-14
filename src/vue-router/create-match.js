@@ -23,6 +23,21 @@ export default function createMatcher(routes) {
     createRouteMap(routes, pathMap)
   }
 
+  function match(location) {
+    // 获取路由记录，一个路径可能有多个记录
+    let record = pathMap[location]
+    if(record) {
+      // 匹配成功
+      return createRoute(record, {
+        path: location
+      })
+    }
+    // 未匹配到
+    return createRoute(null, {
+      path: location
+    })
+  }
+
   return {
     addRoute, // 添加路由
     match // 匹配路径
