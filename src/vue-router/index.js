@@ -51,6 +51,10 @@ class VueRouter {
     }
     // 初始化的时候，获取当前的hash值进行跳转，并设置监听器
     history.transtionTo(history.getCurrentLoction(), setUpListener)
+    // 每次路径变化时，都会调用此方法
+    // 触发根实例 app 上响应式数据 _route 的更新
+    // 更新 current，但 _router 并没有改变，这样不能触发响应式更新，需要再触发一次 _router 的更新：
+    history.listen(route => app._route = route)
   }
   /**
    * 根据路径匹配到路由映射表matcher中进行路由匹配

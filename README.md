@@ -57,3 +57,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 matches:[Record2, Record3]
 ```
 > 所以，一个路由可能会命中多个匹配规则
+
+### 5.
+- 更新当前路由的匹配结果；
+- 路由更新前的查重；
+- 路由的响应式实现；
