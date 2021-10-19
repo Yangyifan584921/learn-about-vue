@@ -59,6 +59,7 @@ matches:[Record2, Record3]
 > 所以，一个路由可能会命中多个匹配规则
 
 ### 5.
+参考链接：https://xie.infoq.cn/article/afb07cac24e06fce275018ca2?source=app_share
 - 更新当前路由的匹配结果；
 - 路由更新前的查重；
 - 路由的响应式实现；
