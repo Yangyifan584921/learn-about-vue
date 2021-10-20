@@ -32,6 +32,7 @@ export default function install(Vue) {
         // Vue.util.defineReactive: Vue 构造函数中提供的工具方法,用于定义响应式数据
         Vue.util.defineReactive(this, '_route', this._router.history.current)
       } else { // 子组件
+        
         console.log('子组件', this)
 
         // 将父组件的_routerRoot传递给子组件
