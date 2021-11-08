@@ -24,6 +24,13 @@ class HashHistory extends History {
       this.transtionTo(getHash())
     })
   }
+  push(location) {
+    // 跳转路径，并在跳转后跟新hash值
+    this.transtionTo(location, () => {
+      // 更新hash值
+      window.location.hash = location
+    })
+  }
 }
 
 export default HashHistory

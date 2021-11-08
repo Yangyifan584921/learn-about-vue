@@ -1,5 +1,5 @@
 // install.js最终会导出一个符合Vue插件机制的函数
-
+import Link from './components/link'
 export let _Vue
 /**
  * 插件安装入口逻辑
@@ -42,13 +42,22 @@ export default function install(Vue) {
   })
 
   // 在Vue全局上注册两个组件
-  Vue.component('router-link', {
-    render: h => h('a', {}, '')
-  })
+  Vue.component('router-link', Link)
   Vue.component('router-view', {
     render: h => h('div', {}, '')
   })
   // 在Vue原型上添加两个属性
-  Vue.prototype.$route = {}
-  Vue.prototype.$router = {}
+
+  Object.defineProperty(Vue.prototype, '$route', {
+    get() {
+      return this._routerRoot.$route
+    }
+  })
+  Object.defineProperty(Vue.prototype, '$router', {
+    get() {
+      return this._routerRoot.$router
+    }
+  })
+  // Vue.prototype.$route = {}
+  // Vue.prototype.$router = {}
 }

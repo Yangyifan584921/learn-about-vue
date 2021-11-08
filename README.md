@@ -63,3 +63,9 @@ matches:[Record2, Record3]
 - 更新当前路由的匹配结果；
 - 路由更新前的查重；
 - 路由的响应式实现；
+
+### 6.
+参考链接：https://xie.infoq.cn/article/87ac77b11a2114e82661590d5
+- 介绍了$route、$router 与 router-link 组件的实现，主要涉及以下内容：
+  - 定义原型方法 $route 和 $router；
+  - <router-link>组件的功能和实现；

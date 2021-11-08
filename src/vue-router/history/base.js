@@ -27,7 +27,12 @@ class History {
       path: '/'
     })
   }
-  // 根据路径进行路由匹配，并配置路径改变的监听事件
+  /**
+   * 根据路径进行路由匹配，并配置路径改变的监听事件
+   * 路由跳转的方式：
+   * 每次都需要知道from,to
+   * 响应式：当路径发生变化的时候，更新视图
+   */
   transtionTo(loaction, onComplete) {
     // 根据路径进行路由匹配
     let route = this.matcher.match(location)
